@@ -46,7 +46,7 @@ export function Home() {
           <input
             type="text"
             onBlur={(e) => fetchPosts(e.target.value)}
-            placeholder="Search a Post"
+            placeholder="Procurar um Post"
           />
         </SearchSection>
         <ListSection>

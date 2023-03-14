@@ -18,7 +18,7 @@ export function PersonInfo() {
   const [userInfo, setUserInfo] = useState<IUserInfo>();
 
   async function fetchUsers() {
-    const response = await api.get("users/fariapv");
+    const response = await api.get("users/arturnetto31");
     const { name, followers, login, company, html_url, avatar_url, bio } =
       response.data;
     const newUserObj = {
@@ -61,7 +61,7 @@ export function PersonInfo() {
           </span>
           <span>
             <i className="fa-solid fa-user-group"></i>
-            {userInfo?.followers} Followers
+            {userInfo?.followers} Seguidores
           </span>
         </footer>
       </div>
