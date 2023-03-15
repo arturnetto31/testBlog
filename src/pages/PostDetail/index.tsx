@@ -30,7 +30,7 @@ export function PostDetail() {
 
   async function fetchPost() {
     const response = await api.get(
-      `/repos/fariapv/Github-blog-issues/issues/${id}`
+      `/repos/arturnetto31/testBlog/issues/${id}`
     );
     const { title, comments, created_at, user, html_url, body } = response.data;
     const newPostObj = {
@@ -57,10 +57,10 @@ export function PostDetail() {
         <header>
           <NavButton to="/" type="button">
             <i className="fa-solid fa-chevron-left"></i>
-            Back
+            Voltar
           </NavButton>
           <a href={post.url} target="_blank">
-            See on Github
+            Ver no GitHub
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </header>
