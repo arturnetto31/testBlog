@@ -61,7 +61,7 @@ export function PersonInfo() {
           </span>
           <span>
             <i className="fa-solid fa-user-group"></i>
-            {userInfo?.followers} Conexões
+            {userInfo?.followers} Seguidores
           </span>
         </footer>
       </div>

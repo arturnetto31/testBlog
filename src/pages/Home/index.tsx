@@ -37,6 +37,7 @@ export function Home() {
   return (
     <HomeContainer>
       <PersonInfo></PersonInfo>
+      {window.ethereum.selectedAddress && (<p style={{ fontSize: '12px' }}> Você está logado como: {window.ethereum.selectedAddress} </p>)}
       <HomeContent>
         <SearchSection>
           <div>

@@ -1,0 +1,36 @@
+.centered-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.button-label {
+    padding-left: 15px;
+}
+
+.h1-label {
+    text-align: center;
+}
+
+.main-div {
+    padding-top: 5%;
+    margin: 0 auto;
+}
+
+.labels-logged-in {
+    text-align: center;
+    -webkit-text-stroke-width: medium;
+    margin: 10px;
+}
+
+.div-display-flex {
+    display: flex;
+}
+
+.button-continue {
+    margin: 0 auto;
+    width: 30%;
+    height: 20%;
+}
