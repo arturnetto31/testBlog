@@ -22,8 +22,7 @@ export function Home() {
 
   async function fetchPosts(query = "") {
     const response = await api.get(
-      `search/issues?q=${
-        query ? query : ""
+      `search/issues?q=${query ? query : ""
       }%20repo:${"arturnetto31"}/testBlog`
     );
     setPosts(response.data.items);
@@ -35,31 +34,37 @@ export function Home() {
   }, []);
 
   return (
-    <HomeContainer>
-      <PersonInfo></PersonInfo>
-      {window.ethereum.selectedAddress && (<p style={{ fontSize: '12px' }}> Você está logado como: {window.ethereum.selectedAddress} </p>)}
-      <HomeContent>
-        <SearchSection>
-          <div>
-            <span>Posts</span>
-            <small>{postsCounter} posts</small>
-          </div>
-          <input
-            type="text"
-            onBlur={(e) => fetchPosts(e.target.value)}
-            placeholder="Procurar um Post"
-          />
-        </SearchSection>
-        <ListSection>
-          {posts &&
-            posts.map((post) => (
-              <PostCard
-                key={`${post.title}-${post.number}`}
-                post={post}
-              ></PostCard>
-            ))}
-        </ListSection>
-      </HomeContent>
-    </HomeContainer>
+    <div>
+      {window.ethereum.selectedAddress ? (
+        <HomeContainer>
+          <PersonInfo></PersonInfo>
+          {window.ethereum.selectedAddress && (<p style={{ fontSize: '12px' }}> Você está logado como: {window.ethereum.selectedAddress} </p>)}
+          <HomeContent>
+            <SearchSection>
+              <div>
+                <span>Posts</span>
+                <small>{postsCounter} posts</small>
+              </div>
+              <input
+                type="text"
+                onBlur={(e) => fetchPosts(e.target.value)}
+                placeholder="Procurar um Post"
+              />
+            </SearchSection>
+            <ListSection>
+              {posts &&
+                posts.map((post) => (
+                  <PostCard
+                    key={`${post.title}-${post.number}`}
+                    post={post}
+                  ></PostCard>
+                ))}
+            </ListSection>
+          </HomeContent>
+        </HomeContainer>
+      ) : (
+        window.location.href = "/"
+      )}
+    </div>
   );
 }

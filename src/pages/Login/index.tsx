@@ -13,7 +13,7 @@ const LoginScreen: React.FC = () => {
         toggleShowButton();
         connect();
     };
-
+    
     const toggleShowButton = () => {
         return setShowButton(!showButton);
     }
