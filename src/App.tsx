@@ -11,14 +11,12 @@ import { PostDetail } from "./pages/PostDetail";
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<DefaultLayout></DefaultLayout>}>
             <Route path="/" element={<LoginScreen></LoginScreen>}></Route>
-            <Route path="/:id" element={<PostDetail></PostDetail>}></Route>
-          </Route>
-          <Route path="/home" element={<DefaultLayout></DefaultLayout>}>
             <Route path="/home" element={<Home></Home>}></Route>
+            <Route path="/:id" element={<PostDetail></PostDetail>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
