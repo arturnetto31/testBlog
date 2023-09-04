@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import './styles.css'
 import logoMetaMask from '../../assets/MetaMask_Fox.svg'
+import { Home } from '../Home';
 
 export function LoginScreen() {
     const [username, setUsername] = useState('');
@@ -9,11 +10,18 @@ export function LoginScreen() {
     const [balance, setBalance] = useState('');
     const [message, setMessage] = useState('');
     const [showButton, setShowButton] = useState(true);
+    const [showHome, setShowHome] = useState(false);
+
 
     const handleLogin = () => {
         toggleShowButton();
         connect();
     };
+
+    const toggleShowHome = () => {
+        setLoggedIn(!loggedIn);
+        return setShowHome(!showHome);
+    }
     
     const toggleShowButton = () => {
         return setShowButton(!showButton);
@@ -42,7 +50,7 @@ export function LoginScreen() {
         <div className='main-div'>
             {
                 <div>
-                    {username && (
+                    {(username && loggedIn) && (
                         <div>
                             <div> 
                                 <p className='labels-logged-in'>
@@ -58,7 +66,7 @@ export function LoginScreen() {
                                 </p>
                             </div>
                             <div className='div-display-flex'>
-                                <button onClick={ () => window.location.href = "/home"} className='button-continue'>
+                                <button onClick={ () => toggleShowHome() } className='button-continue'>
                                     <p>Continuar</p>
                                 </button> 
                             </div>
@@ -80,9 +88,11 @@ export function LoginScreen() {
                         <p className='button-label'>Entrar com MetaMask</p>
                     </button>
                     )}
-                    
                 </div>
             }
+            { showHome && (
+                <Home></Home>
+            )}
         </div>
     );
 };
