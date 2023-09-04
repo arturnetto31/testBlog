@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import './styles.css'
 
-const LoginScreen: React.FC = () => {
+function LoginScreen() {
     const [username, setUsername] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const [balance, setBalance] = useState('');

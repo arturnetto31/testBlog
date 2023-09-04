@@ -16,7 +16,7 @@ export interface IPost {
   number: string;
 }
 
-const Home: React.FC = () => {
+function Home() {
   const [posts, setPosts] = useState<IPost[]>([] as IPost[]);
   const [postsCounter, setPostsCounter] = useState(0);
 
