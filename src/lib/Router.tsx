@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { DefaultLayout } from "../layouts/DefaultLayout";
-import Home  from "../pages/Home";
+import { Home }  from "../pages/Home";
 import { PostDetail } from "../pages/PostDetail";
-import LoginScreen from "../pages/Login";
+import { LoginScreen } from "../pages/Login";
 
 export function Router() {
   return (

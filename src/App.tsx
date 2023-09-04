@@ -4,8 +4,8 @@ import { defaultTheme } from "./styles/themes/default";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Router } from "./lib/Router";
 import { DefaultLayout } from "./layouts/DefaultLayout";
-import Home from "./pages/Home";
-import LoginScreen from "./pages/Login";
+import { Home } from "./pages/Home";
+import { LoginScreen } from "./pages/Login";
 import { PostDetail } from "./pages/PostDetail";
 
 function App() {

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import './styles.css'
+import logoMetaMask from '../../assets/MetaMask_Fox.svg'
 
-function LoginScreen() {
+export function LoginScreen() {
     const [username, setUsername] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const [balance, setBalance] = useState('');
@@ -71,7 +72,7 @@ function LoginScreen() {
                     { showButton && (
                         <button onClick={handleLogin} className="centered-button">
                         <img
-                            src="src\assets\MetaMask_Fox.svg"
+                            src={logoMetaMask}
                             alt="MetaMask"
                             width="50"
                             height="50"
@@ -85,5 +86,3 @@ function LoginScreen() {
         </div>
     );
 };
-
-export default LoginScreen;

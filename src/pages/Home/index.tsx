@@ -16,7 +16,7 @@ export interface IPost {
   number: string;
 }
 
-function Home() {
+export function Home() {
   const [posts, setPosts] = useState<IPost[]>([] as IPost[]);
   const [postsCounter, setPostsCounter] = useState(0);
 
@@ -68,5 +68,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
