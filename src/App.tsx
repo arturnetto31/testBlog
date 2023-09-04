@@ -15,8 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<DefaultLayout></DefaultLayout>}>
             <Route path="/" element={<LoginScreen></LoginScreen>}></Route>
-            <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/:id" element={<PostDetail></PostDetail>}></Route>
+          </Route>
+          <Route path="/home" element={<DefaultLayout></DefaultLayout>}>
+            <Route path="/home" element={<Home></Home>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
