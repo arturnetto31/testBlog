@@ -23,7 +23,7 @@ export function Home() {
   async function fetchPosts(query = "") {
     const response = await api.get(
       `search/issues?q=${query ? query : ""
-      }%20repo:${"arturnetto31"}/testBlog`
+      }%20repo:${"projeto-tcc-ufpb"}/testBlog`
     );
     setPosts(response.data.items);
     setPostsCounter(response.data.total_count);

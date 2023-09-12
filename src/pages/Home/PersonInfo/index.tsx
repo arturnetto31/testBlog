@@ -18,14 +18,14 @@ export function PersonInfo() {
   const [userInfo, setUserInfo] = useState<IUserInfo>();
 
   async function fetchUsers() {
-    const response = await api.get("users/arturnetto31");
+    const response = await api.get("users/projeto-tcc-ufpb");
     const { name, followers, login, company, html_url, avatar_url, bio } =
       response.data;
     const newUserObj = {
       name,
       followers,
       githubUsername: login,
-      company,
+      company: "tcc-company",
       url: html_url,
       imgUrl: avatar_url,
       description: bio,

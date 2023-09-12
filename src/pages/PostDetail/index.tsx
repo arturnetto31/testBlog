@@ -30,7 +30,7 @@ export function PostDetail() {
 
   async function fetchPost() {
     const response = await api.get(
-      `/repos/arturnetto31/testBlog/issues/${id}`
+      `/repos/projeto-tcc-ufpb/testBlog/issues/${id}`
     );
     const { title, comments, created_at, user, html_url, body } = response.data;
     const newPostObj = {
